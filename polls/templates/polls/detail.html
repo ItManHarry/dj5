@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Poll detail Page</title>
+</head>
+<body>
+<form action="{%url 'polls:vote' question.id%}" method="post">
+    {%csrf_token%}
+    <fieldset>
+        <legend><h1>{{question}}</h1></legend>
+        <hr>
+        {%if error_message%}<p><strong style="color:red">{{error_message}}</strong></p>{%endif%}
+        {%if question.choice_set%}
+            {%for choice in question.choice_set.all%}
+                <input type="radio" name="choice" id="choice{{forloop.counter}}" value="{{choice.id}}">
+                <label for="choice{{forloop.counter}}">{{choice.choice_text}}</label><br>
+            {%endfor%}
+        {%else%}
+        <h6>No choices!</h6>
+        {%endif%}
+    </fieldset><br>
+    <input type="submit" value="Vote">
+</form><br>
+<a href="{%url 'polls:index'%}">Back</a>
+</body>
+</html>
