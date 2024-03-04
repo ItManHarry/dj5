@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'dgmodels.apps.DgmodelsConfig',
     'dbaggregate.apps.DbaggregateConfig',
+    'dbmanager.apps.DbmanagerConfig',
 ]
 
 MIDDLEWARE = [

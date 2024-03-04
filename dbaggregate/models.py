@@ -5,6 +5,7 @@ class Author(DgBaseModel):
         db_table = 'biz_author'
     name = models.CharField(max_length=128)
     age = models.IntegerField(default=10)
+    remark = models.TextField(null=True)
 
     def __str__(self):
         return self.name
