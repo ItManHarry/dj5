@@ -93,6 +93,13 @@ DATABASES = {
         #     'service': 'my_service',
         #     'passfile': '.my_pgpass',
         # },
+    },
+    'itam_db': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'itam',
+        'USER': 'itam',
+        'PASSWORD': 'Itam2022',
+        'HOST': '10.41.128.217'
     }
 }
 
